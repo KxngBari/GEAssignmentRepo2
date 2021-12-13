@@ -8,6 +8,8 @@ public class InstantiateCubes : MonoBehaviour
     GameObject[] _sampleCube = new GameObject[512];
     public float _maxScale;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
