@@ -402,6 +402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sampleCubePrefab: {fileID: 5971858876123332377, guid: 8db3376a9e9cf9c46a206617ac53b394, type: 3}
+  _maxScale: 1000
 --- !u!4 &1429800735
 Transform:
   m_ObjectHideFlags: 0
