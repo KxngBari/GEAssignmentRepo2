@@ -33,10 +33,12 @@ public class NoiseAudioBox : MonoBehaviour
                 for (int z = 0; z < _gridSize.z; z++)
                 {
                     float noise = _fastNoise.GetSimplex(xOff + _offset.x, yOff + _offset.y, zOff + _offset.z) + 1;
-                    Gizmos.color = new Color(1, 1, 1, noise * 0.5f);
+                    Vector3 noiseDirection = new Vector3(Mathf.Cos(noise * Mathf.PI), Mathf.Sin(noise * Mathf.PI), Mathf.Cos(noise * Mathf.PI));
+                    Gizmos.color = new Color(noiseDirection.normalized.x, noiseDirection.normalized.y, noiseDirection.normalized.z, 1.5f);
                     Vector3 pos = new Vector3(x, y, z) + transform.position;
-                    Vector3 size = new Vector3(1, 1, 1);
-                    Gizmos.DrawCube(pos, size);
+                    Vector3 endpos = pos + Vector3.Normalize(noiseDirection);
+                    Gizmos.DrawLine(pos, endpos);
+                    Gizmos.DrawSphere(endpos, 0.1f);
                     zOff = zOff + _increment;
                 }
                 yOff = yOff + _increment;

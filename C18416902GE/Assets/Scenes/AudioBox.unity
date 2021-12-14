@@ -166,9 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dadc5571bf7712f4e8fd433d789eb067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gridSize: {x: 50, y: 50, z: 1}
-  _increment: 2.39
-  _offset: {x: 0, y: 0, z: 0}
+  _gridSize: {x: 15, y: 15, z: 15}
+  _increment: 10.22
+  _offset: {x: 30, y: 30, z: 40}
   _offsetSpeed: {x: 0, y: 0, z: 0}
 --- !u!1 &1434684465
 GameObject:
