@@ -34,7 +34,7 @@ public class NoiseAudioBox : MonoBehaviour
                 {
                     float noise = _fastNoise.GetSimplex(xOff + _offset.x, yOff + _offset.y, zOff + _offset.z) + 1;
                     Vector3 noiseDirection = new Vector3(Mathf.Cos(noise * Mathf.PI), Mathf.Sin(noise * Mathf.PI), Mathf.Cos(noise * Mathf.PI));
-                    Gizmos.color = new Color(noiseDirection.normalized.x, noiseDirection.normalized.y, noiseDirection.normalized.z, 1.5f);
+                    Gizmos.color = new Color(1-noiseDirection.normalized.x, noiseDirection.normalized.y, noiseDirection.normalized.z, 1.5f);
                     Vector3 pos = new Vector3(x, y, z) + transform.position;
                     Vector3 endpos = pos + Vector3.Normalize(noiseDirection);
                     Gizmos.DrawLine(pos, endpos);
