@@ -10,6 +10,7 @@ public class AudioBoxSound : MonoBehaviour
     public AudioPlayer _audioPlayer;
     [Header("Speed")]
     public bool _useSpeed;
+    public Vector2 _moveSpeedMinMax, _rotateSpeedMinMax;
 
     void Start()
     {
@@ -27,6 +28,10 @@ public class AudioBoxSound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (_useSpeed)
+        {
+            _noiseAudioBox._particleMoveSpeed = Mathf.Lerp(_moveSpeedMinMax.x, _moveSpeedMinMax.y, _audioPlayer._AmplitudeBuffer);
+            _noiseAudioBox._particleRotateSpeed = Mathf.Lerp(_rotateSpeedMinMax.x, _rotateSpeedMinMax.y, _audioPlayer._AmplitudeBuffer);
+        }
     }
 }

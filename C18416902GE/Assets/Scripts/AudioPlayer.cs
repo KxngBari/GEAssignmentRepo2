@@ -7,6 +7,8 @@ using UnityEngine;
 public class AudioPlayer : MonoBehaviour
 {
     AudioSource _audioSource;
+    public float _Amplitude, _AmplitudeBuffer;
+    private float _AmplitudeHighest;
     public static float[] _samples = new float[512];
     public static float[] _frequencyBands = new float[8];
     public static float[] _bandBuffer = new float[8];
@@ -27,6 +29,7 @@ public class AudioPlayer : MonoBehaviour
         CreateFreqBands();
         BandBuffer();
         CreateAudioBands();
+        GetAmplitude();
     }
 
     void GetSpectrumAudioSource()
@@ -64,6 +67,24 @@ public class AudioPlayer : MonoBehaviour
             }
         }
     }
+
+    void GetAmplitude()
+    {
+        float _CurrentAmplitude = 0;
+        float _CurrentAmplitudeBuffer = 0;
+        for (int i = 0; i < 8; i++)
+        {
+            _CurrentAmplitude += _audioBand[i];
+            _CurrentAmplitudeBuffer += _audioBandBuffer[i];
+        }
+        if (_CurrentAmplitude > _AmplitudeHighest)
+        {
+            _AmplitudeHighest = _CurrentAmplitude;
+        }
+        _Amplitude = _CurrentAmplitude / _AmplitudeHighest;
+        _AmplitudeBuffer = _CurrentAmplitudeBuffer / _AmplitudeHighest;
+    }
+
 
     void CreateFreqBands()
     {
