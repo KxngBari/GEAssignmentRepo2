@@ -194,8 +194,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioPlayer: {fileID: 1296838992}
   _useSpeed: 1
-  _moveSpeedMinMax: {x: 10, y: 30}
-  _rotateSpeedMinMax: {x: 30, y: 300}
+  _moveSpeedMinMax: {x: 0, y: 25}
+  _rotateSpeedMinMax: {x: 15, y: 250}
   _useScale: 1
   _scaleMinMax: {x: 0, y: 3}
   _material: {fileID: 2100000, guid: 2ed2c6a014f02b24aa2cb9d94ed6ffda, type: 2}
@@ -325,7 +325,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 29b8f996f03104140ad99568b2e56eee, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ec7b6dd35b6551d4bb7e17cc3308860c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

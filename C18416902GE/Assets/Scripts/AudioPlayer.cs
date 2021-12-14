@@ -57,7 +57,7 @@ public class AudioPlayer : MonoBehaviour
             if (_frequencyBands[g] > _bandBuffer[g])
             {
                 _bandBuffer[g] = _frequencyBands[g];
-                _bufferDecrease[g] = 0.005f;
+                _bufferDecrease[g] = 0.2f;
             }
 
             if (_frequencyBands[g] < _bandBuffer[g])
