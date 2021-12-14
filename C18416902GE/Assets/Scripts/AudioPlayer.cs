@@ -15,8 +15,8 @@ public class AudioPlayer : MonoBehaviour
     float[] _bufferDecrease = new float[8];
 
     float[] _frequencyBandHighest = new float[8];
-    public static float[] _audioBand = new float[8];
-    public static float[] _audioBandBuffer = new float[8];
+    public float[] _audioBand = new float[8];
+    public float[] _audioBandBuffer = new float[8];
     void Start()
     {
         _audioSource = GetComponent<AudioSource>();

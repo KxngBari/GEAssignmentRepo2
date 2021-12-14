@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 10651, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -167,12 +167,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dadc5571bf7712f4e8fd433d789eb067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gridSize: {x: 29, y: 17, z: 20}
+  _gridSize: {x: 32, y: 15, z: 20}
   _cellSize: 4.58
-  _increment: 2.18
-  _offset: {x: 30, y: 30, z: 40}
-  _offsetSpeed: {x: 0, y: 0, z: 0}
-  _particlePrefab: {fileID: 6933075898557205125, guid: 7ef57fcef9360fb488e6fda2eb1c6e94, type: 3}
+  _increment: 2.54
+  _offset: {x: 21.6, y: 50.98, z: 40}
+  _offsetSpeed: {x: 8.4, y: 3.84, z: 0}
+  _particlePrefab: {fileID: 4517776010946010376, guid: cd4537c3fc46fbe4dbaea8eeb2d8e84f, type: 3}
   _numberOfParticles: 1000
   _particles: []
   _particleScale: 1
@@ -186,15 +186,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606130476}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eec26ddd6ff7eb140aec934cae50b4d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _audioPlayer: {fileID: 1296838992}
-  _useSpeed: 0
-  _moveSpeedMinMax: {x: 0, y: 80}
-  _rotateSpeedMinMax: {x: 0, y: 300}
+  _useSpeed: 1
+  _moveSpeedMinMax: {x: 10, y: 80}
+  _rotateSpeedMinMax: {x: 30, y: 300}
+  _useScale: 1
+  _scaleMinMax: {x: 0, y: 3}
 --- !u!1 &1296838991
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +229,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Amplitude: 0
   _AmplitudeBuffer: 0
+  _audioBand:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  _audioBandBuffer:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!82 &1296838993
 AudioSource:
   m_ObjectHideFlags: 0
@@ -237,7 +257,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e73f617a265f6a9488c9c0b8d351eedc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 29b8f996f03104140ad99568b2e56eee, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -481,7 +501,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 20.6
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -506,10 +526,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929838110}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0.00679519, w: 0.99997693}
+  m_LocalPosition: {x: 71.6, y: 38.8, z: -245.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.779}

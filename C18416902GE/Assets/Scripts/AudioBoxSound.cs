@@ -11,6 +11,9 @@ public class AudioBoxSound : MonoBehaviour
     [Header("Speed")]
     public bool _useSpeed;
     public Vector2 _moveSpeedMinMax, _rotateSpeedMinMax;
+    [Header("Scale")]
+    public bool _useScale;
+    public Vector2 _scaleMinMax;
 
     void Start()
     {
@@ -32,6 +35,14 @@ public class AudioBoxSound : MonoBehaviour
         {
             _noiseAudioBox._particleMoveSpeed = Mathf.Lerp(_moveSpeedMinMax.x, _moveSpeedMinMax.y, _audioPlayer._AmplitudeBuffer);
             _noiseAudioBox._particleRotateSpeed = Mathf.Lerp(_rotateSpeedMinMax.x, _rotateSpeedMinMax.y, _audioPlayer._AmplitudeBuffer);
+        }
+        for (int i = 0; i < _noiseAudioBox._numberOfParticles; i++)
+        {
+            if (_useScale)
+            {
+                float scale = Mathf.Lerp(_scaleMinMax.x, _scaleMinMax.y, _audioPlayer._audioBandBuffer[_noiseAudioBox._particles[i]._audioBand]);
+                _noiseAudioBox._particles[i].transform.localScale = new Vector3(scale, scale, scale);
+            }
         }
     }
 }

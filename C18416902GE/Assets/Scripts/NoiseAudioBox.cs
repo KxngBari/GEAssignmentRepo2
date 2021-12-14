@@ -147,7 +147,7 @@ public class NoiseAudioBox : MonoBehaviour
                 );
             p.ApplyRotation(_audioBoxDirection[_particlePos.x, _particlePos.y, _particlePos.z], _particleRotateSpeed);
             p._moveSpeed = _particleMoveSpeed;
-            p.transform.localScale = new Vector3(_particleScale, _particleScale, _particleScale);
+            //p.transform.localScale = new Vector3(_particleScale, _particleScale, _particleScale);
         }
     }
 
