@@ -16,7 +16,7 @@ public class NoiseAudioBox : MonoBehaviour
     [HideInInspector]
     public List<AudioBoxParticle> _particles;
 
-    public float _particleScale;
+    public float _particleScale, _particleMoveSpeed, _particleRotateSpeed;
     public float _spawnRadius;
     bool _particleSpawnChecker(Vector3 position)
     {
@@ -81,6 +81,7 @@ public class NoiseAudioBox : MonoBehaviour
     void Update()
     {
         CalculateAudioBoxDirections();
+        ParticleBehaviour();
     }
 
     void CalculateAudioBoxDirections()
@@ -103,6 +104,21 @@ public class NoiseAudioBox : MonoBehaviour
                 yOff = yOff + _increment;
             }
             xOff = xOff + _increment;
+        }
+    }
+
+    void ParticleBehaviour()
+    {
+        foreach(AudioBoxParticle p in _particles)
+        {
+            Vector3Int _particlePos = new Vector3Int(
+                Mathf.FloorToInt(Mathf.Clamp((p.transform.position.x - this.transform.position.x) / _cellSize, 0, _gridSize.x - 1)),
+                Mathf.FloorToInt(Mathf.Clamp((p.transform.position.y - this.transform.position.y) / _cellSize, 0, _gridSize.y - 1)),
+                Mathf.FloorToInt(Mathf.Clamp((p.transform.position.z - this.transform.position.z) / _cellSize, 0, _gridSize.z - 1))
+                );
+            p.ApplyRotation(_audioBoxDirection[_particlePos.x, _particlePos.y, _particlePos.z], _particleRotateSpeed);
+            p._moveSpeed = _particleMoveSpeed;
+            p.transform.localScale = new Vector3(_particleScale, _particleScale, _particleScale);
         }
     }
 

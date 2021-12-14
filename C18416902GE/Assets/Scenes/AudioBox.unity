@@ -175,6 +175,8 @@ MonoBehaviour:
   _numberOfParticles: 800
   _particles: []
   _particleScale: 1
+  _particleMoveSpeed: 10
+  _particleRotateSpeed: 100
   _spawnRadius: 2
 --- !u!1 &1434684465
 GameObject:
