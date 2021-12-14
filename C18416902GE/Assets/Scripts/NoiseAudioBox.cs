@@ -86,6 +86,7 @@ public class NoiseAudioBox : MonoBehaviour
 
     void CalculateAudioBoxDirections()
     {
+        _offset = new Vector3(_offset.x + (_offsetSpeed.x * Time.deltaTime), _offset.y + (_offsetSpeed.y * Time.deltaTime), _offset.z + (_offsetSpeed.z * Time.deltaTime));
         float xOff = 0f;
         for (int x = 0; x < _gridSize.x; x++)
         {
