@@ -111,6 +111,34 @@ public class NoiseAudioBox : MonoBehaviour
     {
         foreach(AudioBoxParticle p in _particles)
         {
+            // check x edges of particles
+            if (p.transform.position.x > this.transform.position.x + (_gridSize.x * _cellSize))
+            {
+                p.transform.position = new Vector3(this.transform.position.x, p.transform.position.y, p.transform.position.z);
+            }
+            if (p.transform.position.x < this.transform.position.x)
+            {
+                p.transform.position = new Vector3(this.transform.position.x + (_gridSize.x * _cellSize), p.transform.position.y, p.transform.position.z);
+            }
+            // check y edges of particles
+            if (p.transform.position.y > this.transform.position.y + (_gridSize.y * _cellSize))
+            {
+                p.transform.position = new Vector3(p.transform.position.x, this.transform.position.y, p.transform.position.z);
+            }
+            if (p.transform.position.y < this.transform.position.y)
+            {
+                p.transform.position = new Vector3(p.transform.position.x, this.transform.position.y + (_gridSize.y * _cellSize), p.transform.position.z);
+            }
+            // check z edges of particles
+            if (p.transform.position.z > this.transform.position.z + (_gridSize.z * _cellSize))
+            {
+                p.transform.position = new Vector3(p.transform.position.x, p.transform.position.y, this.transform.position.z);
+            }
+            if (p.transform.position.z < this.transform.position.z)
+            {
+                p.transform.position = new Vector3(p.transform.position.x, p.transform.position.y, this.transform.position.z + (_gridSize.z * _cellSize));
+            }
+
             Vector3Int _particlePos = new Vector3Int(
                 Mathf.FloorToInt(Mathf.Clamp((p.transform.position.x - this.transform.position.x) / _cellSize, 0, _gridSize.x - 1)),
                 Mathf.FloorToInt(Mathf.Clamp((p.transform.position.y - this.transform.position.y) / _cellSize, 0, _gridSize.y - 1)),
