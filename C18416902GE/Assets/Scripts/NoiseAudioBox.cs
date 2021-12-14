@@ -10,6 +10,14 @@ public class NoiseAudioBox : MonoBehaviour
     public float _increment;
     public Vector3 _offset, _offsetSpeed;
 
+    //particles
+    public GameObject _particlePrefab;
+    public int _numberOfParticles;
+    [HideInInspector]
+    public List<AudioBoxParticle> _particles;
+
+    public float _particleScale;
+
     //",," = 3-dimensional vector
     public Vector3[,,] _audioBoxDirection;
     void Start()
@@ -17,6 +25,21 @@ public class NoiseAudioBox : MonoBehaviour
         //using brackets rather than parentheses because this is a multi-dimensional vector
         _audioBoxDirection = new Vector3[_gridSize.x, _gridSize.y, _gridSize.z];
         _fastNoise = new FastNoise();
+        _particles = new List<AudioBoxParticle>();
+
+        for (int i = 0; i < _numberOfParticles; i++)
+        {
+            Vector3 randomPos = new Vector3(
+                Random.Range(this.transform.position.x, this.transform.position.x + _gridSize.x * _cellSize),
+                Random.Range(this.transform.position.y, this.transform.position.y + _gridSize.y * _cellSize),
+                Random.Range(this.transform.position.z, this.transform.position.z + _gridSize.z * _cellSize));
+
+            GameObject _particleInstance = (GameObject)Instantiate(_particlePrefab);
+            _particleInstance.transform.position = randomPos;
+            _particleInstance.transform.parent = this.transform;
+            _particleInstance.transform.localScale = new Vector3(_particleScale, _particleScale, _particleScale);
+            _particles.Add(_particleInstance.GetComponent<AudioBoxParticle>());
+        }
     }
 
     void Update()

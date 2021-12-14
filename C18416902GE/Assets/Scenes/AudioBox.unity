@@ -167,10 +167,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gridSize: {x: 15, y: 15, z: 15}
-  _cellSize: 1.14
-  _increment: 9.26
+  _cellSize: 5
+  _increment: 2.18
   _offset: {x: 30, y: 30, z: 40}
   _offsetSpeed: {x: 0, y: 0, z: 0}
+  _particlePrefab: {fileID: 6933075898557205125, guid: 7ef57fcef9360fb488e6fda2eb1c6e94, type: 3}
+  _numberOfParticles: 500
+  _particles: []
+  _particleScale: 1
 --- !u!1 &1434684465
 GameObject:
   m_ObjectHideFlags: 0
