@@ -11,6 +11,10 @@ public class AudioPeer : MonoBehaviour
     public static float[] _frequencyBands = new float[8];
     public static float[] _bandBuffer = new float[8];
     float[] _bufferDecrease = new float[8];
+
+    float[] _frequencyBandHighest = new float[8];
+    public static float[] _audioBand = new float[8];
+    public static float[] _audioBandBuffer = new float[8];
     void Start()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -22,11 +26,25 @@ public class AudioPeer : MonoBehaviour
         GetSpectrumAudioSource();
         CreateFreqBands();
         BandBuffer();
+        CreateAudioBands();
     }
 
     void GetSpectrumAudioSource()
     {
         _audioSource.GetSpectrumData(_samples, 0, FFTWindow.Blackman);
+    }
+
+    void CreateAudioBands()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            if (_frequencyBands[i] > _frequencyBandHighest[i])
+            {
+                _frequencyBandHighest[i] = _frequencyBands[i];
+            }
+            _audioBand[i] = (_frequencyBands[i] / _frequencyBandHighest[i]);
+            _audioBandBuffer[i] = (_bandBuffer[i] / _frequencyBandHighest[i]);
+        }
     }
 
     void BandBuffer()

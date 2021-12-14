@@ -155,6 +155,7 @@ MonoBehaviour:
   _band: 3
   _startScale: 1
   _scaleMultiplier: 10
+  _useBuffer: 0
 --- !u!4 &31551321
 Transform:
   m_ObjectHideFlags: 0
@@ -168,7 +169,7 @@ Transform:
   m_Children:
   - {fileID: 1142503691}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &85872084
 GameObject:
@@ -202,6 +203,7 @@ MonoBehaviour:
   _band: 2
   _startScale: 1
   _scaleMultiplier: 10
+  _useBuffer: 0
 --- !u!4 &85872086
 Transform:
   m_ObjectHideFlags: 0
@@ -215,7 +217,7 @@ Transform:
   m_Children:
   - {fileID: 1358380382}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &94208672
 GameObject:
@@ -249,6 +251,7 @@ MonoBehaviour:
   _band: 5
   _startScale: 1
   _scaleMultiplier: 10
+  _useBuffer: 0
 --- !u!4 &94208674
 Transform:
   m_ObjectHideFlags: 0
@@ -262,7 +265,7 @@ Transform:
   m_Children:
   - {fileID: 810041242}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &189211064
 PrefabInstance:
@@ -358,6 +361,7 @@ MonoBehaviour:
   _band: 4
   _startScale: 1
   _scaleMultiplier: 10
+  _useBuffer: 0
 --- !u!1001 &201007139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -452,6 +456,7 @@ MonoBehaviour:
   _band: 4
   _startScale: 1
   _scaleMultiplier: 10
+  _useBuffer: 0
 --- !u!1001 &272955414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -546,6 +551,7 @@ MonoBehaviour:
   _band: 4
   _startScale: 1
   _scaleMultiplier: 10
+  _useBuffer: 0
 --- !u!1 &576253923
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +584,7 @@ MonoBehaviour:
   _band: 7
   _startScale: 1
   _scaleMultiplier: 10
+  _useBuffer: 0
 --- !u!4 &576253925
 Transform:
   m_ObjectHideFlags: 0
@@ -591,7 +598,7 @@ Transform:
   m_Children:
   - {fileID: 1503621750}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -780,6 +787,7 @@ MonoBehaviour:
   _band: 4
   _startScale: 1
   _scaleMultiplier: 10
+  _useBuffer: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,6 +965,7 @@ MonoBehaviour:
   _band: 4
   _startScale: 1
   _scaleMultiplier: 10
+  _useBuffer: 0
 --- !u!1 &1252644282
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,6 +998,7 @@ MonoBehaviour:
   _band: 6
   _startScale: 1
   _scaleMultiplier: 10
+  _useBuffer: 0
 --- !u!4 &1252644284
 Transform:
   m_ObjectHideFlags: 0
@@ -1002,7 +1012,7 @@ Transform:
   m_Children:
   - {fileID: 201007140}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1286635173
 GameObject:
@@ -1034,7 +1044,7 @@ Transform:
   m_Children:
   - {fileID: 1403144666}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1286635175
 MonoBehaviour:
@@ -1051,6 +1061,7 @@ MonoBehaviour:
   _band: 0
   _startScale: 1
   _scaleMultiplier: 10
+  _useBuffer: 0
 --- !u!1001 &1358380381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1145,6 +1156,7 @@ MonoBehaviour:
   _band: 4
   _startScale: 1
   _scaleMultiplier: 10
+  _useBuffer: 0
 --- !u!1 &1403144665 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5971858876123332377, guid: 8db3376a9e9cf9c46a206617ac53b394, type: 3}
@@ -1170,51 +1182,7 @@ MonoBehaviour:
   _band: 4
   _startScale: 1
   _scaleMultiplier: 10
---- !u!1 &1429800733
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1429800735}
-  - component: {fileID: 1429800734}
-  m_Layer: 0
-  m_Name: InstantiateCubes
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1429800734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429800733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e4a2464512b6c24087a6117dc8387ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sampleCubePrefab: {fileID: 5971858876123332377, guid: 8db3376a9e9cf9c46a206617ac53b394, type: 3}
-  _maxScale: 10000
---- !u!4 &1429800735
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429800733}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.0728, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  _useBuffer: 0
 --- !u!1 &1463098470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,6 +1417,7 @@ MonoBehaviour:
   _band: 4
   _startScale: 1
   _scaleMultiplier: 10
+  _useBuffer: 0
 --- !u!1 &1680281364
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,6 +1450,7 @@ MonoBehaviour:
   _band: 1
   _startScale: 1
   _scaleMultiplier: 10
+  _useBuffer: 0
 --- !u!4 &1680281366
 Transform:
   m_ObjectHideFlags: 0
@@ -1494,7 +1464,7 @@ Transform:
   m_Children:
   - {fileID: 189211065}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1719723454
 PrefabInstance:
@@ -1597,6 +1567,7 @@ MonoBehaviour:
   _band: 4
   _startScale: 1
   _scaleMultiplier: 10
+  _useBuffer: 0
 --- !u!4 &1915779756
 Transform:
   m_ObjectHideFlags: 0
@@ -1610,5 +1581,5 @@ Transform:
   m_Children:
   - {fileID: 272955415}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
