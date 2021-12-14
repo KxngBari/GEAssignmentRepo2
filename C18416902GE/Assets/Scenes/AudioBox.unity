@@ -169,11 +169,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gridSize: {x: 32, y: 15, z: 20}
   _cellSize: 4.58
-  _increment: 2.54
-  _offset: {x: 21.6, y: 50.98, z: 40}
-  _offsetSpeed: {x: 8.4, y: 3.84, z: 0}
+  _increment: 2.75
+  _offset: {x: -11.51, y: 50.98, z: 40}
+  _offsetSpeed: {x: 8.4, y: 32.76, z: 0}
   _particlePrefab: {fileID: 4517776010946010376, guid: cd4537c3fc46fbe4dbaea8eeb2d8e84f, type: 3}
-  _numberOfParticles: 1000
+  _numberOfParticles: 1350
   _particles: []
   _particleMeshRenderer: []
   _particleScale: 1
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioPlayer: {fileID: 1296838992}
   _useSpeed: 1
-  _moveSpeedMinMax: {x: 10, y: 80}
+  _moveSpeedMinMax: {x: 10, y: 30}
   _rotateSpeedMinMax: {x: 30, y: 300}
   _useScale: 1
   _scaleMinMax: {x: 0, y: 3}
@@ -203,21 +203,21 @@ MonoBehaviour:
   _colorName1: _Color
   _gradient1:
     serializedVersion: 2
-    key0: {r: 0.9150943, g: 0.63793916, b: 0.12661673, a: 1}
-    key1: {r: 1, g: 0, b: 0, a: 1}
-    key2: {r: 1, g: 1, b: 1, a: 0}
-    key3: {r: 0.8584906, g: 0.19977449, b: 0.41116807, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 0.7264151, g: 0.27183452, b: 0.29679194, a: 1}
+    key1: {r: 0.7075472, g: 0.46710378, b: 0.27144888, a: 1}
+    key2: {r: 0.7214389, g: 0.745283, b: 0.25780222, a: 0}
+    key3: {r: 0.27791104, g: 0.764151, b: 0.2643289, a: 0}
+    key4: {r: 0.21701074, g: 0.4523334, b: 0.7264151, a: 0}
+    key5: {r: 0.53477955, g: 0.24433365, b: 0.6698113, a: 0}
+    key6: {r: 0.5780408, g: 0.13050307, b: 0.7830189, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 65535
-    ctime3: 65535
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
+    ctime0: 193
+    ctime1: 13300
+    ctime2: 25636
+    ctime3: 35466
+    ctime4: 46067
+    ctime5: 55512
+    ctime6: 55512
     ctime7: 0
     atime0: 0
     atime1: 65535
@@ -228,16 +228,16 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
-    m_NumColorKeys: 2
+    m_NumColorKeys: 6
     m_NumAlphaKeys: 2
   _colorThreshold1: 0
   _colorMultiplier1: 1
-  _useColor2: 1
+  _useColor2: 0
   _colorName2: _EmissionColor
   _gradient2:
     serializedVersion: 2
-    key0: {r: 0.08825789, g: 0.28455186, b: 0.8018868, a: 1}
-    key1: {r: 0.9101956, g: 0.9339623, b: 0.35831252, a: 1}
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -453,7 +453,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.9716981, g: 0.8798794, b: 0.62946475, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -571,7 +571,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 20.6
+  field of view: 18.94712
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
