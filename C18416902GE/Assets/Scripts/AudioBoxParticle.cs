@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AudioBoxParticle : MonoBehaviour
 {
+    public float _moveSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,12 @@ public class AudioBoxParticle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        this.transform.position = this.transform.position + transform.forward * _moveSpeed * Time.deltaTime;
+    }
+
+    public void ApplyRotation(Vector3 _rotation, float _rotateSpeed)
+    {
+        Quaternion _targetRotation = Quaternion.LookRotation(_rotation.normalized);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, _targetRotation, _rotateSpeed * Time.deltaTime);
     }
 }
