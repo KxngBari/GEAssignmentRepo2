@@ -6,23 +6,26 @@ public class NoiseAudioBox : MonoBehaviour
 {
     FastNoise _fastNoise;
     public Vector3Int _gridSize;
+    public float _cellSize;
     public float _increment;
     public Vector3 _offset, _offsetSpeed;
-    // Start is called before the first frame update
+
+    //",," = 3-dimensional vector
+    public Vector3[,,] _audioBoxDirection;
     void Start()
     {
-        
+        //using brackets rather than parentheses because this is a multi-dimensional vector
+        _audioBoxDirection = new Vector3[_gridSize.x, _gridSize.y, _gridSize.z];
+        _fastNoise = new FastNoise();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        CalculateAudioBoxDirections();
     }
 
-    private void OnDrawGizmos()
+    void CalculateAudioBoxDirections()
     {
-        _fastNoise = new FastNoise();
         float xOff = 0f;
         for (int x = 0; x < _gridSize.x; x++)
         {
@@ -34,16 +37,20 @@ public class NoiseAudioBox : MonoBehaviour
                 {
                     float noise = _fastNoise.GetSimplex(xOff + _offset.x, yOff + _offset.y, zOff + _offset.z) + 1;
                     Vector3 noiseDirection = new Vector3(Mathf.Cos(noise * Mathf.PI), Mathf.Sin(noise * Mathf.PI), Mathf.Cos(noise * Mathf.PI));
-                    Gizmos.color = new Color(1-noiseDirection.normalized.x, noiseDirection.normalized.y, noiseDirection.normalized.z, 1.5f);
-                    Vector3 pos = new Vector3(x, y, z) + transform.position;
-                    Vector3 endpos = pos + Vector3.Normalize(noiseDirection);
-                    Gizmos.DrawLine(pos, endpos);
-                    Gizmos.DrawSphere(endpos, 0.1f);
+                    _audioBoxDirection[x, y, z] = Vector3.Normalize(noiseDirection);
+
                     zOff = zOff + _increment;
                 }
                 yOff = yOff + _increment;
             }
             xOff = xOff + _increment;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireCube(this.transform.position + new Vector3((_gridSize.x * _cellSize) * 0.5f, (_gridSize.y * _cellSize) * 0.5f, (_gridSize.z * _cellSize) * 0.5f),
+            new Vector3(_gridSize.x * _cellSize, _gridSize.y * _cellSize, _gridSize.z * _cellSize));
     }
 }
