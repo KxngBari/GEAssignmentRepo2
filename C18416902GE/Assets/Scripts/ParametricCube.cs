@@ -19,15 +19,15 @@ public class ParametricCube : MonoBehaviour
     {
         if (_useBuffer)
         {
-            transform.localScale = new Vector3(transform.localScale.x, (AudioPeer._bandBuffer[_band] * _scaleMultiplier) + _startScale, transform.localScale.z);
-            Color _color = new Color(AudioPeer._audioBandBuffer[_band], AudioPeer._audioBandBuffer[_band], AudioPeer._audioBandBuffer[_band]);
+            transform.localScale = new Vector3(transform.localScale.x, (AudioPlayer._bandBuffer[_band] * _scaleMultiplier) + _startScale, transform.localScale.z);
+            Color _color = new Color(AudioPlayer._audioBandBuffer[_band], AudioPlayer._audioBandBuffer[_band], AudioPlayer._audioBandBuffer[_band]);
             _material.SetColor("_EmissionColor", _color);
         }
 
         if (!_useBuffer)
         {
-            transform.localScale = new Vector3(transform.localScale.x, (AudioPeer._frequencyBands[_band] * _scaleMultiplier) + _startScale, transform.localScale.z);
-            Color _color = new Color(AudioPeer._audioBand[_band], AudioPeer._audioBand[_band], AudioPeer._audioBand[_band]);
+            transform.localScale = new Vector3(transform.localScale.x, (AudioPlayer._frequencyBands[_band] * _scaleMultiplier) + _startScale, transform.localScale.z);
+            Color _color = new Color(AudioPlayer._audioBand[_band], AudioPlayer._audioBand[_band], AudioPlayer._audioBand[_band]);
             _material.SetColor("_EmissionColor", _color);
         }
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioBoxParticle : MonoBehaviour
 {
     public float _moveSpeed;
+    public int _audioBand;
     // Start is called before the first frame update
     void Start()
     {

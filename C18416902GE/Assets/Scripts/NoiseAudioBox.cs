@@ -41,7 +41,7 @@ public class NoiseAudioBox : MonoBehaviour
 
     //",," = 3-dimensional vector
     public Vector3[,,] _audioBoxDirection;
-    void Start()
+    void Awake()
     {
         //using brackets rather than parentheses because this is a multi-dimensional vector
         _audioBoxDirection = new Vector3[_gridSize.x, _gridSize.y, _gridSize.z];

@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 606130477}
   - component: {fileID: 606130478}
+  - component: {fileID: 606130479}
   m_Layer: 0
   m_Name: NoiseAudioBox
   m_TagString: Untagged
@@ -178,6 +179,20 @@ MonoBehaviour:
   _particleMoveSpeed: 30
   _particleRotateSpeed: 100
   _spawnRadius: 2
+--- !u!114 &606130479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606130476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eec26ddd6ff7eb140aec934cae50b4d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioPlayer: {fileID: 0}
+  _useSpeed: 0
 --- !u!1 &1296838991
 GameObject:
   m_ObjectHideFlags: 0

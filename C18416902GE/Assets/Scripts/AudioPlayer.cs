@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent (typeof(AudioSource))]
 
-public class AudioPeer : MonoBehaviour
+public class AudioPlayer : MonoBehaviour
 {
     AudioSource _audioSource;
     public static float[] _samples = new float[512];
