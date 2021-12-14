@@ -17,6 +17,27 @@ public class NoiseAudioBox : MonoBehaviour
     public List<AudioBoxParticle> _particles;
 
     public float _particleScale;
+    public float _spawnRadius;
+    bool _particleSpawnChecker(Vector3 position)
+    {
+        bool valid = true;
+        foreach (AudioBoxParticle particle in _particles)
+        {
+            if (Vector3.Distance(position, particle.transform.position) < _spawnRadius)
+            {
+                valid = false;
+                break;
+            }
+        }
+        if (valid)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     //",," = 3-dimensional vector
     public Vector3[,,] _audioBoxDirection;
@@ -29,17 +50,32 @@ public class NoiseAudioBox : MonoBehaviour
 
         for (int i = 0; i < _numberOfParticles; i++)
         {
-            Vector3 randomPos = new Vector3(
-                Random.Range(this.transform.position.x, this.transform.position.x + _gridSize.x * _cellSize),
-                Random.Range(this.transform.position.y, this.transform.position.y + _gridSize.y * _cellSize),
-                Random.Range(this.transform.position.z, this.transform.position.z + _gridSize.z * _cellSize));
+            int attempt = 0;
 
-            GameObject _particleInstance = (GameObject)Instantiate(_particlePrefab);
-            _particleInstance.transform.position = randomPos;
-            _particleInstance.transform.parent = this.transform;
-            _particleInstance.transform.localScale = new Vector3(_particleScale, _particleScale, _particleScale);
-            _particles.Add(_particleInstance.GetComponent<AudioBoxParticle>());
+            while(attempt < 100)
+            {
+                Vector3 randomPos = new Vector3(
+                    Random.Range(this.transform.position.x, this.transform.position.x + _gridSize.x * _cellSize),
+                    Random.Range(this.transform.position.y, this.transform.position.y + _gridSize.y * _cellSize),
+                    Random.Range(this.transform.position.z, this.transform.position.z + _gridSize.z * _cellSize));
+                bool isValid = _particleSpawnChecker(randomPos);
+
+                if (isValid)
+                {
+                    GameObject _particleInstance = (GameObject)Instantiate(_particlePrefab);
+                    _particleInstance.transform.position = randomPos;
+                    _particleInstance.transform.parent = this.transform;
+                    _particleInstance.transform.localScale = new Vector3(_particleScale, _particleScale, _particleScale);
+                    _particles.Add(_particleInstance.GetComponent<AudioBoxParticle>());
+                    break;
+                }
+                if (!isValid)
+                {
+                    attempt++;
+                }
+            }
         }
+        Debug.Log(_particles.Count);
     }
 
     void Update()

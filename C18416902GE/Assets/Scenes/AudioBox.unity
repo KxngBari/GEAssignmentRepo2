@@ -172,9 +172,10 @@ MonoBehaviour:
   _offset: {x: 30, y: 30, z: 40}
   _offsetSpeed: {x: 0, y: 0, z: 0}
   _particlePrefab: {fileID: 6933075898557205125, guid: 7ef57fcef9360fb488e6fda2eb1c6e94, type: 3}
-  _numberOfParticles: 500
+  _numberOfParticles: 800
   _particles: []
   _particleScale: 1
+  _spawnRadius: 2
 --- !u!1 &1434684465
 GameObject:
   m_ObjectHideFlags: 0
