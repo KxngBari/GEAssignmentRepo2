@@ -15,6 +15,7 @@ public class NoiseAudioBox : MonoBehaviour
     public int _numberOfParticles;
     [HideInInspector]
     public List<AudioBoxParticle> _particles;
+    public List<MeshRenderer> _particleMeshRenderer;
 
     public float _particleScale, _particleMoveSpeed, _particleRotateSpeed;
     public float _spawnRadius;
@@ -47,6 +48,7 @@ public class NoiseAudioBox : MonoBehaviour
         _audioBoxDirection = new Vector3[_gridSize.x, _gridSize.y, _gridSize.z];
         _fastNoise = new FastNoise();
         _particles = new List<AudioBoxParticle>();
+        _particleMeshRenderer = new List<MeshRenderer>();
 
         for (int i = 0; i < _numberOfParticles; i++)
         {
@@ -67,6 +69,7 @@ public class NoiseAudioBox : MonoBehaviour
                     _particleInstance.transform.parent = this.transform;
                     _particleInstance.transform.localScale = new Vector3(_particleScale, _particleScale, _particleScale);
                     _particles.Add(_particleInstance.GetComponent<AudioBoxParticle>());
+                    _particleMeshRenderer.Add(_particleInstance.GetComponent<MeshRenderer>());
                     break;
                 }
                 if (!isValid)
