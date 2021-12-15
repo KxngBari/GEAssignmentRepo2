@@ -35,7 +35,7 @@ is a track I produced for my friend who owns a circus, so I'm definitely proud I
 I'm creating a beautiful audio visualizer that will almost seem like it's floating through space. It will consist of a user's desired
 amount of spheres that will scale, rotate, and move based on the song that is playing.
 
-https://github.com/KxngBari/C18416902GEAssignment
+https://github.com/KxngBari/GEAssignmentRepo2
 
 ## This is how to markdown text:
 
