@@ -28,7 +28,8 @@ FastNoise.cs - From[https://github.com/Auburn/FastNoise_CSharp]
 Visualizing audio - https://www.youtube.com/watch?v=wtXirrO-iNA
 
 # What I am most proud of in the assignment
-I'm so happy with how clean it looks! Even though it isn't that complex, I'm still very satisfied with how polished and reactive the design is!
+I'm so happy with how clean it looks! Even though it isn't that complex, I'm still very satisfied with how polished and reactive the design is! Also, the track played in the project
+is a track I produced for my friend who owns a circus, so I'm definitely proud I could put the song to use here as well!
 
 # Proposal submitted earlier can go here:
 I'm creating a beautiful audio visualizer that will almost seem like it's floating through space. It will consist of a user's desired
