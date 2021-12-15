@@ -15,7 +15,7 @@ public class AudioBoxParticle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = this.transform.position + transform.forward * _moveSpeed * Time.deltaTime;
+        this.transform.position += transform.forward * _moveSpeed * Time.deltaTime;
     }
 
     public void ApplyRotation(Vector3 _rotation, float _rotateSpeed)
