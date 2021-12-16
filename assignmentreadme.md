@@ -37,71 +37,50 @@ amount of spheres that will scale, rotate, and move based on the song that is pl
 
 https://github.com/KxngBari/GEAssignmentRepo2
 
-## This is how to markdown text:
-
-This is *emphasis*
-
-This is a bulleted list
-
-- Item
-- Item
-
-This is a numbered list
-
-1. Item
-1. Item
-
-This is a [hyperlink](http://bryanduggan.org)
-
-# Headings
-## Headings
-#### Headings
-##### Headings
-
 This is code:
 
-```Java
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
+```C#
+    void CreateAudioBands()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            if (_frequencyBands[i] > _frequencyBandHighest[i])
+            {
+                _frequencyBandHighest[i] = _frequencyBands[i];
+            }
+            _audioBand[i] = (_frequencyBands[i] / _frequencyBandHighest[i]);
+            _audioBandBuffer[i] = (_bandBuffer[i] / _frequencyBandHighest[i]);
+        }
+    }
 ```
 
-So is this without specifying the language:
+The above code assigns a frequency bad to each individual particle, going 0 to 7.
 
+```C#
+    void CalculateAudioBoxDirections()
+    {
+        _offset = new Vector3(_offset.x + (_offsetSpeed.x * Time.deltaTime), _offset.y + (_offsetSpeed.y * Time.deltaTime), _offset.z + (_offsetSpeed.z * Time.deltaTime));
+        float xOff = 0f;
+        for (int x = 0; x < _gridSize.x; x++)
+        {
+            float yOff = 0f;
+            for (int y = 0; y < _gridSize.y; y++)
+            {
+                float zOff = 0f;
+                for (int z = 0; z < _gridSize.z; z++)
+                {
+                    float noise = _fastNoise.GetSimplex(xOff + _offset.x, yOff + _offset.y, zOff + _offset.z) + 1;
+                    Vector3 noiseDirection = new Vector3(Mathf.Cos(noise * Mathf.PI), Mathf.Sin(noise * Mathf.PI), Mathf.Cos(noise * Mathf.PI));
+                    _audioBoxDirection[x, y, z] = Vector3.Normalize(noiseDirection);
+
+                    zOff = zOff + _increment;
+                }
+                yOff = yOff + _increment;
+            }
+            xOff = xOff + _increment;
+        }
+    }
 ```
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
+The above code calculates which direction the particles will move within the audio box.
 
-This is an image using a relative URL:
-
-![An image](images/p8.png)
-
-This is an image using an absolute URL:
-
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
-
-This is a youtube video:
-
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
-
-This is a table:
-
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-
+!https://imgur.com/a/PzIAwJe
